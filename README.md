@@ -1,22 +1,19 @@
-# Unsupervised-Learning
+# K Means Clustering
 
-This repository serves as a hub for showcasing works on unsupervised learning techniques, specifically focusing on clustering and association algorithms. Whether you're a seasoned researcher, student, or practitioner eager to explore the realm of unsupervised learning methods, this repository is designed to provide you with the necessary resources to support your journey.
+K-means clustering is one of the most popular and widely used unsupervised machine learning algorithms for partitioning a dataset into a predefined number of clusters. The algorithm aims to group similar data points together and minimize the intra-cluster variation while maximizing the inter-cluster variation. Here's a detailed explanation of how the K-means clustering algorithm works:
 
-What is Unsupervised Learning?
+1. Initialization: The algorithm starts by randomly initializing K centroids, where K represents the number of clusters you want to identify in the dataset. These centroids can be randomly selected from the data points or by other initialization methods.
 
-Unsupervised learning represents a fundamental branch of machine learning where algorithms autonomously identify patterns and structures within input data without explicit supervision or labeled responses. Unlike supervised learning paradigms, where models are trained using labeled data, unsupervised learning tasks involve exploring the data to uncover hidden relationships or structures. Common tasks within unsupervised learning encompass clustering, dimensionality reduction, and association rule mining.
+2. Assignment Step: In this step, each data point in the dataset is assigned to the nearest centroid based on some distance metric, commonly the Euclidean distance. Each data point belongs to the cluster with the nearest mean, and this step effectively partitions the dataset into K clusters.
 
-Contents
+3. Update Step: After the assignment of data points to clusters, the next step involves updating the centroids of the clusters. Each centroid is recalculated as the mean of all data points assigned to its cluster.
 
-This repository primarily revolves around two key areas within the realm of unsupervised learning:
+4. Iteration: Steps 2 and 3 are repeated iteratively until either the centroids no longer change significantly or a predefined number of iterations is reached. During each iteration, data points may change their assigned clusters, and centroids are recalculated accordingly.
 
-Clustering
-Clustering stands as a pivotal technique for grouping similar data points together based on shared features or characteristics. Within this repository, you'll encounter works centered on two prominent clustering algorithms:
+5. Convergence: The algorithm converges when the centroids no longer change significantly between iterations or when a predefined convergence criterion is met. At this point, the algorithm has identified stable cluster assignments.
 
-K-Means Clustering: This centroid-based algorithm partitions data into K distinct clusters based on proximity to centroids.
-Hierarchical Clustering: Operating by recursively merging or splitting clusters based on similarity, hierarchical clustering forms a hierarchy of clusters.
-Association
-Association rule learning constitutes another vital facet of unsupervised learning, focusing on the discovery of intriguing relationships between variables within extensive datasets. The repository features implementations and discussions on two noteworthy association algorithms:
+6. Final Result: Once the algorithm converges, the final result is a set of K clusters, where each cluster is represented by its centroid. Each data point is assigned to the cluster with the nearest centroid.
 
-Apriori Algorithm: A classic approach to frequent itemset mining, widely applied in market basket analysis and beyond.
-Éclat Algorithm: Known for its efficiency, particularly with sparse datasets, Éclat serves as an alternative method for mining frequent itemsets.
+K-means clustering is computationally efficient and works well for datasets with a large number of samples. However, it has some limitations, such as sensitivity to initial centroid selection and the need to specify the number of clusters beforehand. Additionally, K-means may not perform well on datasets with non-linear boundaries or clusters of varying sizes and densities.
+
+Despite its limitations, K-means clustering is widely used in various applications such as image segmentation, document clustering, customer segmentation, and anomaly detection. Its simplicity, scalability, and effectiveness make it a popular choice for many clustering tasks.
