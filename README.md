@@ -1,22 +1,27 @@
-# Unsupervised-Learning
+# Hierarchial-Clustering
 
-This repository serves as a hub for showcasing works on unsupervised learning techniques, specifically focusing on clustering and association algorithms. Whether you're a seasoned researcher, student, or practitioner eager to explore the realm of unsupervised learning methods, this repository is designed to provide you with the necessary resources to support your journey.
+Hierarchical clustering is a popular unsupervised machine learning algorithm used to group similar data points into clusters based on their proximity to each other. Unlike K-means clustering, which requires pre-specifying the number of clusters, hierarchical clustering builds a tree-like hierarchy of clusters, known as a dendrogram, which can be further analyzed to determine the optimal number of clusters. Here's how hierarchical clustering works:
 
-What is Unsupervised Learning?
+1. Initialization: Each data point is treated as a single cluster at the beginning.
 
-Unsupervised learning represents a fundamental branch of machine learning where algorithms autonomously identify patterns and structures within input data without explicit supervision or labeled responses. Unlike supervised learning paradigms, where models are trained using labeled data, unsupervised learning tasks involve exploring the data to uncover hidden relationships or structures. Common tasks within unsupervised learning encompass clustering, dimensionality reduction, and association rule mining.
+2. Distance Calculation: The algorithm computes the distance between each pair of clusters. The choice of distance metric (e.g., Euclidean distance, Manhattan distance, etc.) depends on the nature of the data.
 
-Contents
+3. Merge Step (Agglomerative): The two closest clusters are merged together to form a new cluster. This process continues iteratively until all data points belong to a single cluster, forming a dendrogram.
 
-This repository primarily revolves around two key areas within the realm of unsupervised learning:
+4. Dendrogram Construction: The dendrogram represents the hierarchical structure of the clusters, with the leaves corresponding to individual data points and the branches indicating the merging of clusters at different levels of similarity.
 
-Clustering
-Clustering stands as a pivotal technique for grouping similar data points together based on shared features or characteristics. Within this repository, you'll encounter works centered on two prominent clustering algorithms:
+5. Cutting the Dendrogram: To obtain a specific number of clusters, a cut is made at a certain level of the dendrogram. The number of resulting clusters depends on the height of the cut.
 
-K-Means Clustering: This centroid-based algorithm partitions data into K distinct clusters based on proximity to centroids.
-Hierarchical Clustering: Operating by recursively merging or splitting clusters based on similarity, hierarchical clustering forms a hierarchy of clusters.
-Association
-Association rule learning constitutes another vital facet of unsupervised learning, focusing on the discovery of intriguing relationships between variables within extensive datasets. The repository features implementations and discussions on two noteworthy association algorithms:
+Hierarchical clustering can be agglomerative (bottom-up) or divisive (top-down):
 
-Apriori Algorithm: A classic approach to frequent itemset mining, widely applied in market basket analysis and beyond.
-Éclat Algorithm: Known for its efficiency, particularly with sparse datasets, Éclat serves as an alternative method for mining frequent itemsets.
+- Agglomerative Hierarchical Clustering: It starts with each data point as a separate cluster and iteratively merges the closest clusters until a single cluster containing all data points is formed.
+
+- Divisive Hierarchical Clustering: It starts with all data points in a single cluster and recursively divides them into smaller clusters until each cluster contains only one data point.
+
+**Example: Customer Segmentation**
+
+Let's consider the same example of customer segmentation as before. In hierarchical clustering, we start with each customer as a separate cluster. We then iteratively merge the closest clusters based on their similarity in terms of age, income, and spending score. This process continues until all customers belong to a single cluster, forming a dendrogram.
+
+The dendrogram can be visually inspected to determine the optimal number of clusters. By cutting the dendrogram at a certain height, we can obtain a specific number of clusters based on the desired level of similarity.
+
+Hierarchical clustering offers flexibility in analyzing the data at different levels of granularity, making it suitable for exploratory data analysis and visualization. It also does not require specifying the number of clusters beforehand, which can be advantageous in certain scenarios. However, hierarchical clustering can be computationally expensive, especially for large datasets, and the interpretation of the dendrogram may vary depending on the distance metric and linkage method used.
