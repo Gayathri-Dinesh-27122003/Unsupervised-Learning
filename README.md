@@ -1,6 +1,6 @@
 # Unsupervised-Learning
 
-This repository serves as a hub for showcasing works on unsupervised learning techniques, specifically focusing on clustering and association algorithms. Whether you're a seasoned researcher, student, or practitioner eager to explore the realm of unsupervised learning methods, this repository is designed to provide you with the necessary resources to support your journey.
+This repository serves as a hub for showcasing works on unsupervised learning techniques, specifically focusing on clustering and association algorithms.
 
 What is Unsupervised Learning?
 
@@ -15,6 +15,7 @@ Clustering stands as a pivotal technique for grouping similar data points togeth
 
 K-Means Clustering: This centroid-based algorithm partitions data into K distinct clusters based on proximity to centroids.
 Hierarchical Clustering: Operating by recursively merging or splitting clusters based on similarity, hierarchical clustering forms a hierarchy of clusters.
+
 Association
 Association rule learning constitutes another vital facet of unsupervised learning, focusing on the discovery of intriguing relationships between variables within extensive datasets. The repository features implementations and discussions on two noteworthy association algorithms:
 
